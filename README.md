@@ -1,5 +1,5 @@
 # zot-mtls-nginx
-Simple docker example file to run zot registry with nginx with mtls
+Simple docker example to run zot registry with nginx reverse proxy with mtls
 
 ### Usage
 - Start the docker container using the commands below
