@@ -10,7 +10,7 @@ Simple docker example to run a [registry](https://distribution.github.io/distrib
 ### Usage
 - Start the docker container using the commands below
 ```sh
-make start logs
+make run
 ```
 
 - Simple test using `curl`. Expect a `301` header
@@ -22,10 +22,12 @@ HTTP/1.1 301 Moved Permanently
 
 - Push a helm chart using this command
 ```sh
+helm create foo
+helm package foo/.
 docker login localhost:5000 -u registry -p password
 docker login localhost:443 -u registry -p password
-helm push mychart-0.1.0.tgz oci://localhost:443 --ca-file certs/ca.crt --cert-file certs/client.crt --key-file certs/client.key
-helm push mychart-0.1.0.tgz oci://localhost:5000
+helm push foo-0.1.0.tgz oci://localhost:443 --ca-file certs/ca.crt --cert-file certs/client.crt --key-file certs/client.key
+helm push foo-0.1.0.tgz oci://localhost:5000
 ```
 
 - Clean up

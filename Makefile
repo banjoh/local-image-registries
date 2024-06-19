@@ -14,8 +14,11 @@ start: mychart certs
 .PHONY: restart
 restart: stop start
 
+.PHONY: run
+run: start logs
+
 .PHONY: logs
-logs: start
+logs:
 	docker compose logs -f
 
 .PHONY: stop
