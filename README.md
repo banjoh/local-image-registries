@@ -1,5 +1,5 @@
 # Local image registry
-Simple docker example to run a [registry](https://distribution.github.io/distribution/) with nginx reverse proxy configured with mtls. This setup is based on https://distribution.github.io/distribution/recipes/nginx/ instructions. Its not meant to be used in live systems. You can use it to test a registry running locally for instance.
+Simple docker example to run a [registry](https://distribution.github.io/distribution/) configured to expose various configuration e.g auth, tls, mtls etc. This setup is based on https://distribution.github.io/distribution/about/deploying/#deploy-your-registry-using-a-compose-file instructions. Its not meant to be used in live systems. You can use it to test a registry running locally for instance.
 
 ### Dependencies
 - docker
