@@ -10,7 +10,7 @@ Simple docker example to run a [registry](https://distribution.github.io/distrib
 - openssl
 
 ### Usage
-- Start the docker container using the commands below
+- Run all registries using the command below
 ```sh
 make run
 ```

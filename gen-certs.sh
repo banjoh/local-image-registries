@@ -34,7 +34,7 @@ openssl req -config <(echo "$CONFIG") -new -x509 -days $DAYS -key ca.key -subj "
 openssl req -newkey rsa:2048 -nodes -keyout server.key -subj "/CN=server" -out server.csr
 openssl req -newkey rsa:2048 -nodes -keyout client.key -subj "/CN=client" -out client.csr
 openssl x509 -req \
-             -extfile <(printf "subjectAltName=DNS:example.com,DNS:localhost,IP:127.0.0.1") \
+             -extfile <(printf "subjectAltName=DNS:example.com,DNS:localhost,DNS:registry,IP:127.0.0.1") \
              -days $DAYS \
              -in server.csr \
              -CA ca.crt \

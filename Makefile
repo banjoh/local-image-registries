@@ -4,11 +4,11 @@ certs:
 .PHONY: clean
 clean: stop
 	@bash -c "test -d certs && rm -r certs || :"
-	@bash -c "test -d data && rm -r data || :"
-	@bash -c "rm -f *tgz; test -d mychart && rm -r mychart || :"
+	@bash -c "rm -r data* || :"
+	@bash -c "rm -f *tgz; test -d foo && rm -r foo || :"
 
 .PHONY: start
-start: mychart certs
+start: certs
 	docker compose up -d
 
 .PHONY: restart
@@ -25,10 +25,6 @@ logs:
 stop:
 	docker compose down
 
-.PHONY: build
-build:
-	docker compose build
-
-mychart:
-	helm create mychart
-	helm package mychart
+.PHONY: show-ports
+show-ports:
+	docker container ls --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}"
