@@ -1,5 +1,3 @@
-### Archived in favour of https://github.com/banjoh/docker-registry
-
 # Local image registry
 Simple docker example to run a [registry](https://distribution.github.io/distribution/) with nginx reverse proxy configured with mtls. This setup is based on https://distribution.github.io/distribution/recipes/nginx/ instructions. Its not meant to be used in live systems. You can use it to test a registry running locally for instance.
 
